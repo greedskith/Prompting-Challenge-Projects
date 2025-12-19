@@ -9,7 +9,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Widgets)
+find_package(Qt6 REQUIRED COMPONENTS Core Widgets)
 
 set(PROJECT_SOURCES
     main.cpp
@@ -21,7 +21,7 @@ set(PROJECT_SOURCES
 
 add_executable(NotebookApp ${PROJECT_SOURCES})
 
-target_link_libraries(NotebookApp PRIVATE Qt6::Widgets)
+target_link_libraries(NotebookApp PRIVATE Qt6::Core Qt6::Widgets)
 
 # Handle platform-specific settings
 if(APPLE)
